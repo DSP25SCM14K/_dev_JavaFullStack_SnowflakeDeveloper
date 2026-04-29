@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Kumar | Java Full-Stack & Snowflake Developer</title>
+<meta name="description" content="Portfolio of Dev Kumar — Java Full-Stack & Snowflake Developer building production microservices, React applications, ETL pipelines, and Snowflake-powered analytics systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060816;--panel:rgba(15,23,42,.7);--text:#e5eefc;--muted:#9fb0d1;--line:rgba(148,163,184,.18);
+--accent:#60a5fa;--accent2:#22d3ee;--accent3:#8b5cf6;--shadow:0 24px 80px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);
+background:
+radial-gradient(circle at 15% 20%, rgba(34,211,238,.12), transparent 24%),
+radial-gradient(circle at 85% 10%, rgba(96,165,250,.12), transparent 22%),
+radial-gradient(circle at 50% 80%, rgba(139,92,246,.14), transparent 28%),
+linear-gradient(180deg,#050713 0%,#070b16 35%,#05060f 100%);
+min-height:100vh}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);background-size:36px 36px;mask-image:radial-gradient(circle at center, black 30%, transparent 88%);pointer-events:none;z-index:-1}
+.container{width:min(1200px,calc(100% - 32px));margin:0 auto}
+header{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);background:rgba(4,8,18,.64);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.brand{font-weight:800}.brand span{color:var(--accent)}
+.nav-links{display:flex;flex-wrap:wrap;gap:10px}
+.nav-links a,.btn,.pill{text-decoration:none;color:var(--text);border:1px solid var(--line);background:rgba(15,23,42,.55);padding:10px 14px;border-radius:999px;transition:.18s;font-size:.92rem}
+.nav-links a:hover,.btn:hover,.pill:hover{transform:translateY(-1px);border-color:rgba(96,165,250,.4);box-shadow:0 8px 24px rgba(96,165,250,.12)}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:72px 0 36px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(34,211,238,.22);background:rgba(11,16,32,.85);color:#bfefff;padding:10px 14px;border-radius:999px;font-size:.92rem;margin-bottom:16px}
+.dot{width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 16px rgba(96,165,250,.75)}
+h1{font-size:clamp(2.6rem,5vw,5rem);line-height:.98;margin:0 0 18px;letter-spacing:-.04em}
+.gradient{background:linear-gradient(90deg,#fff,#dbeafe 30%,#93c5fd 58%,#67e8f9 88%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subline,.lead{line-height:1.8;color:var(--muted)}
+.subline{font-size:clamp(1.05rem,2vw,1.25rem);max-width:760px;margin-bottom:26px}
+.type-wrap{display:inline-flex;align-items:center;min-height:42px;margin-bottom:18px;color:#c7ddff;font-size:1.05rem;font-weight:600}
+.type-text{min-width:280px;color:var(--accent2)}
+.caret{width:10px;height:22px;margin-left:3px;background:var(--accent2);animation:blink 1s steps(1) infinite;border-radius:2px}
+@keyframes blink{50%{opacity:0}}
+.hero-actions,.badges,.project-links,.contact-links{display:flex;flex-wrap:wrap;gap:10px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:10px}
+.stat,.panel,.timeline-item,.project-card,.hero-side{background:var(--panel);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
+.stat{padding:16px}.stat strong{display:block;font-size:1.35rem;margin-bottom:6px}.stat span{color:var(--muted);font-size:.9rem;line-height:1.4}
+.hero-side{padding:22px}
+.diagram{width:100%;border-radius:22px;border:1px solid rgba(148,163,184,.18);background:linear-gradient(180deg,rgba(2,6,23,.96),rgba(15,23,42,.84));overflow:hidden;padding:12px}
+.section{padding:34px 0}.section h2{font-size:clamp(1.6rem,3vw,2.35rem);margin:0 0 10px;letter-spacing:-.03em}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:18px}
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.panel{padding:22px}
+.badge{font-size:.88rem;padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(8,12,24,.8);color:#d4e2fa}
+.timeline{display:grid;gap:18px}
+.timeline-item{padding:22px;position:relative;overflow:hidden}
+.timeline-item:before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:3px;border-radius:999px;background:linear-gradient(180deg,var(--accent),var(--accent2),var(--accent3))}
+.timeline-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-left:18px;margin-bottom:10px}
+.timeline h3,.project-card h3{margin:0}
+.meta,.footer{color:var(--muted)}
+ul.bullets{margin:0;padding-left:36px;display:grid;gap:10px;color:#d7e4fb;line-height:1.7}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.project-card{padding:20px;display:flex;flex-direction:column;gap:12px}
+.project-card p{margin:0;color:var(--muted);line-height:1.7}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.footer{padding:40px 0 60px;text-align:center}
+@media (max-width:980px){.hero,.two-col,.project-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{flex-direction:column;align-items:start}}
+@media (max-width:620px){.nav{align-items:start;flex-direction:column}.stats{grid-template-columns:1fr}.nav-links{width:100%}.nav-links a{flex:1 1 auto;text-align:center}.type-text{min-width:0}}
+</style>
+</head>
+<body>
+<header><div class="container nav"><div class="brand">Dev <span>Kumar</span></div><nav class="nav-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#architecture">Architecture</a><a href="#contact">Contact</a></nav></div></header>
+<main class="container">
+<section class="hero">
+<div class="reveal visible">
+<div class="eyebrow"><span class="dot"></span> Building production systems across full-stack applications and modern data platforms</div>
+<h1>Java Full-Stack Engineer <br><span class="gradient">& Snowflake Builder</span></h1>
+<div class="type-wrap"><span>I build&nbsp;</span><span class="type-text" id="typewriter"></span><span class="caret"></span></div>
+<p class="subline">I design reliable microservices, polished React experiences, and low-latency data pipelines that turn raw events into usable products, dashboards, and decisions. My work spans application engineering, ETL orchestration, warehouse modeling, and cloud delivery.</p>
+<div class="hero-actions"><a class="btn" href="#projects">View Projects</a><a class="btn" href="mailto:devkumar.dklv@gmail.com">Email Me</a><a class="btn" target="_blank" rel="noreferrer" href="https://github.com/devthedevil">GitHub</a><a class="btn" target="_blank" rel="noreferrer" href="https://leetcode.com/u/dev_kumar_dklv/">LeetCode</a></div>
+<div class="stats">
+<div class="stat"><strong>8+ Years</strong><span>Hands-on engineering across Java, React, ETL, and cloud-native delivery.</span></div>
+<div class="stat"><strong>50M+</strong><span>Rows or events processed monthly across ingestion and analytics pipelines.</span></div>
+<div class="stat"><strong>99.99%</strong><span>Uptime and production reliability across long-lived enterprise platforms.</span></div>
+<div class="stat"><strong>65K+</strong><span>Users supported across internal tools, SaaS products, and operations systems.</span></div>
+</div></div>
+<aside class="hero-side reveal">
+<svg viewBox="0 0 640 500" class="diagram" aria-label="Architecture diagram">
+<defs><linearGradient id="lineGlow" x1="0" x2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient><linearGradient id="boxGrad" x1="0" x2="1"><stop offset="0%" stop-color="rgba(96,165,250,0.18)"/><stop offset="100%" stop-color="rgba(34,211,238,0.14)"/></linearGradient></defs>
+<rect x="16" y="16" width="608" height="468" rx="24" fill="rgba(2,6,23,0.45)" stroke="rgba(148,163,184,0.15)" />
+<text x="34" y="54" fill="#dbeafe" font-size="22" font-family="Inter" font-weight="700">Delivery Lens</text>
+<text x="34" y="79" fill="#94a3b8" font-size="14" font-family="Inter">From source ingestion to product surfaces and measurable outcomes</text>
+<rect x="36" y="110" width="160" height="74" rx="18" fill="url(#boxGrad)" stroke="rgba(96,165,250,0.35)"/><text x="58" y="138" fill="#f8fbff" font-size="16" font-family="Inter" font-weight="700">Sources</text><text x="58" y="162" fill="#c8d8f3" font-size="13" font-family="Inter">Web data</text><text x="58" y="180" fill="#c8d8f3" font-size="13" font-family="Inter">Partner APIs</text>
+<rect x="240" y="110" width="170" height="74" rx="18" fill="url(#boxGrad)" stroke="rgba(96,165,250,0.35)"/><text x="264" y="138" fill="#f8fbff" font-size="16" font-family="Inter" font-weight="700">Ingestion</text><text x="264" y="162" fill="#c8d8f3" font-size="13" font-family="Inter">Spring Boot</text><text x="264" y="180" fill="#c8d8f3" font-size="13" font-family="Inter">Kafka / Functions</text>
+<rect x="454" y="110" width="150" height="74" rx="18" fill="url(#boxGrad)" stroke="rgba(96,165,250,0.35)"/><text x="478" y="138" fill="#f8fbff" font-size="16" font-family="Inter" font-weight="700">Load</text><text x="478" y="162" fill="#c8d8f3" font-size="13" font-family="Inter">Snowpipe</text><text x="478" y="180" fill="#c8d8f3" font-size="13" font-family="Inter">Streams / Tasks</text>
+<rect x="96" y="246" width="188" height="84" rx="20" fill="rgba(17,24,39,0.9)" stroke="rgba(34,211,238,0.28)"/><text x="122" y="275" fill="#f8fbff" font-size="17" font-family="Inter" font-weight="700">Modeling Layer</text><text x="122" y="300" fill="#c8d8f3" font-size="13" font-family="Inter">dbt staging → core → marts</text><text x="122" y="320" fill="#c8d8f3" font-size="13" font-family="Inter">Quality checks, lineage, CDC</text>
+<rect x="340" y="246" width="206" height="84" rx="20" fill="rgba(17,24,39,0.9)" stroke="rgba(139,92,246,0.28)"/><text x="364" y="275" fill="#f8fbff" font-size="17" font-family="Inter" font-weight="700">Application Layer</text><text x="364" y="300" fill="#c8d8f3" font-size="13" font-family="Inter">React / TypeScript dashboards</text><text x="364" y="320" fill="#c8d8f3" font-size="13" font-family="Inter">JWT auth, REST APIs, analytics UX</text>
+<rect x="206" y="386" width="236" height="68" rx="18" fill="rgba(17,24,39,0.94)" stroke="rgba(52,211,153,0.26)"/><text x="233" y="415" fill="#f8fbff" font-size="17" font-family="Inter" font-weight="700">Operations & Improvement</text><text x="233" y="438" fill="#c8d8f3" font-size="13" font-family="Inter">CI/CD, profiling, warehouse tuning, observability, cost control</text>
+<line x1="196" y1="147" x2="240" y2="147" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/><line x1="410" y1="147" x2="454" y2="147" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/><line x1="284" y1="184" x2="190" y2="246" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/><line x1="494" y1="184" x2="444" y2="246" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/><line x1="284" y1="330" x2="258" y2="386" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/><line x1="440" y1="330" x2="392" y2="386" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/>
+</svg></aside></section>
+
+<section class="section" id="about"><div class="section-head reveal"><div><h2>About</h2><p class="lead">I work at the intersection of application engineering and data platform delivery. My strongest work happens when product requirements, backend services, event pipelines, warehouse design, and front-end experiences need to come together into one reliable system.</p></div></div>
+<div class="two-col">
+<div class="panel reveal"><h3>What I focus on</h3><div class="badges" style="margin-top:14px"><span class="badge">Java 11/17</span><span class="badge">Spring Boot</span><span class="badge">React / TypeScript</span><span class="badge">Snowflake</span><span class="badge">dbt</span><span class="badge">Snowpipe</span><span class="badge">Streams & Tasks</span><span class="badge">PySpark</span><span class="badge">Kafka</span><span class="badge">Azure Databricks</span><span class="badge">CI/CD</span><span class="badge">Docker / Kubernetes</span></div><p class="lead" style="margin-top:18px">I enjoy turning noisy inputs into dependable products: ingestion services that stay current, transformations that remain explainable, and interfaces that let teams act on the data without fighting the system behind it.</p></div>
+<div class="panel reveal"><h3>Engineering principles</h3><ul class="bullets" style="padding-left:22px; margin-top:14px"><li>Build for maintainability first, then optimize the hot path with evidence.</li><li>Make data lineage and warehouse contracts visible, not tribal knowledge.</li><li>Prefer clear APIs and straightforward operational playbooks over cleverness.</li><li>Treat front-end experience and backend reliability as the same product quality problem.</li><li>Design pipelines so that scale, observability, and cost are part of the first version.</li></ul></div>
+</div></section>
+
+<section class="section" id="experience"><div class="section-head reveal"><div><h2>Experience</h2><p class="lead">Full bullet-point impact, from ingestion architecture and warehouse modeling to product features, cloud delivery, and team leadership.</p></div></div><div class="timeline">
+<article class="timeline-item reveal"><div class="timeline-head"><div><h3>Sprouts AI — Software Engineer</h3><div class="meta">Chicago, IL · Mar 2025 – Present</div></div></div><ul class="bullets"><li>Built Java/Spring Boot extraction microservices ingesting candidate, ATS, and partner data from Greenhouse, calendar APIs, and public web sources, landing 50M+ rows/month into Snowflake via Snowpipe with under 60-second latency.</li><li>Modeled the Snowflake warehouse with dbt (staging → core → marts), Streams, and Tasks for incremental CDC, cutting transformation runtime 70% and powering a React/TypeScript analytics dashboard used daily by recruiting teams.</li><li>Shipped a React + Spring Boot full-stack feature for AI-driven candidate matching with REST APIs, JWT auth, and Snowflake-backed search, lifting recommendation accuracy by 35% across 10K+ profiles.</li><li>Tuned Snowflake warehouse sizing, query profiles, and clustering keys, dropping monthly compute spend 28% while maintaining sub-2s p95 query latency for live operational dashboards.</li></ul></article>
+<article class="timeline-item reveal"><div class="timeline-head"><div><h3>Resilience Inc — Software Engineer</h3><div class="meta">Chicago, IL · Aug 2023 – Mar 2025</div></div></div><ul class="bullets"><li>Architected end-to-end ETL pipelines extracting engagement events from MongoDB and partner REST APIs, transforming with PySpark on Azure Databricks, and loading into Snowflake via Snowpipe and Streams for 200K+ users at 50M+ events/month.</li><li>Built dbt models on Snowflake (staging, intermediate, marts) with automated tests and documentation, raising data-quality scores 42% and giving analytics and finance audit-ready datasets with full lineage.</li><li>Redesigned mylearningtools.org and the Selena React Native app on a React + Java/Spring Boot stack with REST APIs, cutting page load time 30% and lifting student engagement 40% across cross-functional Agile delivery.</li><li>Migrated a legacy .NET/SQL Server stack to Java/Spring Boot microservices on Azure with Kafka and Postgres, cutting p99 latency 30% and unlocking real-time CDC into Snowflake via Streams and Tasks.</li></ul></article>
+<article class="timeline-item reveal"><div class="timeline-head"><div><h3>Tata Steel — Software Engineer / IT Project Manager</h3><div class="meta">Apr 2018 – Aug 2023</div></div></div><ul class="bullets"><li>Architected cloud-native Java/Spring Boot microservices integrating SAP, Oracle, and SQL Server systems for 65K+ employees, exposing REST APIs and dbt models on Snowflake that powered downstream reporting and cut manual reconciliation effort by 60%.</li><li>Built Kafka and Azure Functions ETL pipelines extracting plant operations and HR data from on-prem SAP, transforming with PySpark, and loading into Snowflake via Snowpipe and Streams, dropping batch run time from 6 hours to 35 minutes and enabling near real-time analytics.</li><li>Delivered React and Angular front-ends backed by Java/Spring Boot REST APIs for L&D, training, and operations apps used by 65K+ employees, sustaining 99.99% uptime across 20+ enterprise modules.</li><li>Led a 12-engineer full-stack team across Java backend, React/Angular frontend, and Android, embedding GitHub-based CI/CD with Jenkins, automated tests, and code review gates that cut post-release defects 45%.</li></ul></article>
+</div></section>
+
+<section class="section" id="architecture"><div class="section-head reveal"><div><h2>Architecture Focus</h2><p class="lead">The systems I enjoy most are the ones where product quality depends on strong warehouse design, predictable ETL, and application code that makes the output useful.</p></div></div><div class="two-col"><div class="panel reveal"><h3>Where I go deep</h3><ul class="bullets" style="padding-left:22px; margin-top:14px"><li>Designing Spring Boot services that ingest from external APIs, partner systems, and public sources.</li><li>Modeling Snowflake layers with incremental patterns, lineage, and cost-aware warehouse strategies.</li><li>Using Streams, Tasks, and low-latency ingestion patterns to reduce manual operational overhead.</li><li>Building front-end surfaces in React and TypeScript that make complex datasets approachable.</li><li>Profiling query plans, batch runtimes, and service latency so performance work is measurable.</li></ul></div><div class="panel reveal"><h3>Build mindset</h3><p class="lead" style="margin-top:14px">A useful system should be understandable from source to dashboard. I like building the connective tissue between APIs, queueing, transformation jobs, modeled warehouse tables, and product interfaces because that is where most real-world delivery friction lives.</p><div class="badges" style="margin-top:16px"><span class="badge">Warehouse tuning</span><span class="badge">CDC</span><span class="badge">API integrations</span><span class="badge">Operational dashboards</span><span class="badge">Lineage & quality</span><span class="badge">Cross-functional delivery</span></div></div></div></section>
+
+<section class="section" id="projects"><div class="section-head reveal"><div><h2>Selected Projects</h2><p class="lead">A mix of production-oriented systems, systems programming work, data pipelines, and applied AI products. Each card includes a source link and, where available, a live demo.</p></div></div><div class="project-grid">
+<div class="project-card reveal"><h3>AskMyStore</h3><p>Full-stack RAG application for merchant product discovery and support workflows.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/AskMyStore">Source Code</a><a class="pill" target="_blank" rel="noreferrer" href="https://askmystore.vercel.app/">Demo</a></div></div>
+<div class="project-card reveal"><h3>TradeSentinel</h3><p>Full-stack AI trading insights application with interactive front-end and live deployment.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/tradesentinel">Source Code</a><a class="pill" target="_blank" rel="noreferrer" href="https://tradesentinel.vercel.app/">Demo</a></div></div>
+<div class="project-card reveal"><h3>STRANGERS</h3><p>MERN social application focused on community interaction and full-stack product delivery.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/Strangers">Source Code</a><span class="badge">Demo on request</span></div></div>
+<div class="project-card reveal"><h3>LangChain Chat with Search</h3><p>Agentic search interface using retrieval and tool-driven response generation.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/LangChain-Chat-with-Search">Source Code</a><span class="badge">Demo on request</span></div></div>
+<div class="project-card reveal"><h3>Real-time Stock Market Analysis Pipeline</h3><p>Streaming ETL pipeline for ingesting, transforming, and analyzing market data in near real time.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/Realtime-Stock-Market-Analysis">Source Code</a><span class="badge">Demo on request</span></div></div>
+<div class="project-card reveal"><h3>CME MDP 3.0 Multicast Feed Handler</h3><p>Low-latency market data feed handler project focused on systems performance and protocol-level processing.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/CME-Multicast-Market-Data-Feed-Handler-C-">Source Code</a><span class="badge">Demo on request</span></div></div>
+<div class="project-card reveal"><h3>Experimental Operating System</h3><p>Operating systems project exploring core systems concepts and low-level execution flow.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/EXPOS">Source Code</a><span class="badge">Demo on request</span></div></div>
+<div class="project-card reveal"><h3>Character Device Driver</h3><p>Linux device driver project highlighting kernel-space interaction and systems engineering fundamentals.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/Character-Device-Driver">Source Code</a><span class="badge">Demo on request</span></div></div>
+<div class="project-card reveal"><h3>16-Bit RISC Processor</h3><p>Hardware and architecture project centered on instruction execution and digital systems foundations.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/Hardware-lab">Source Code</a><span class="badge">Demo on request</span></div></div>
+<div class="project-card reveal"><h3>Movie Recommendation System — IEEE Publication</h3><p>Research-backed recommendation system with publication, code artifact, and certificate.</p><div class="project-links"><a class="pill" target="_blank" rel="noreferrer" href="https://ieeexplore.ieee.org/document/10094480">Paper</a><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil/Comparative-Study-of-Movie-Recommendation-System/blob/main/Netflix_Movie.ipynb">Source Code</a><a class="pill" target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1rayr6Cht6quyLUJOXWOAcBi_rxQp2Ol0/view">Certificate</a></div></div>
+</div></section>
+
+<section class="section" id="contact"><div class="panel reveal"><div class="section-head" style="margin-bottom:8px"><div><h2>Contact</h2><p class="lead">Available for software engineering opportunities across full-stack product development, ETL platform work, and data-rich application delivery.</p></div></div><div class="contact-links" style="margin-top:16px"><a class="pill" href="mailto:devkumar.dklv@gmail.com">devkumar.dklv@gmail.com</a><a class="pill" href="tel:+13125328223">+1 312 532 8223</a><a class="pill" target="_blank" rel="noreferrer" href="https://github.com/devthedevil">GitHub</a><a class="pill" target="_blank" rel="noreferrer" href="https://leetcode.com/u/dev_kumar_dklv/">LeetCode</a></div></div></section>
+
+<footer class="footer">Built as a static portfolio for dark-theme presentation and GitHub Pages deployment.</footer>
+</main>
+<script>
+const phrases=["Spring Boot microservices.","React and TypeScript interfaces.","ETL pipelines with PySpark and dbt.","Snowflake models with Streams and Tasks.","systems that stay reliable under scale."];
+const target=document.getElementById("typewriter");let phraseIndex=0,charIndex=0,deleting=false;
+function tick(){const current=phrases[phraseIndex];if(!deleting){target.textContent=current.slice(0,charIndex+1);charIndex++;if(charIndex===current.length){deleting=true;setTimeout(tick,1400);return;}}else{target.textContent=current.slice(0,charIndex-1);charIndex--;if(charIndex===0){deleting=false;phraseIndex=(phraseIndex+1)%phrases.length;}}setTimeout(tick,deleting?32:58)}tick();
+const observer=new IntersectionObserver((entries)=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}},{threshold:.12});
+document.querySelectorAll(".reveal:not(.visible)").forEach(el=>observer.observe(el));
+</script>
+</body></html>
